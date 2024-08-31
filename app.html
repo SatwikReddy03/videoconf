@@ -193,7 +193,7 @@
   // hands.onResults(onResults);
 
    const doSomethingWithFrame = async (now, metadata) => {
-     await hands.send({ image: remote_video });
+    // await hands.send({ image: remote_video });
      remote_video.requestVideoFrameCallback(doSomethingWithFrame);
    };
 

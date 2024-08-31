@@ -117,66 +117,66 @@
             L[i].z -= L[0].z;
           }
           // angles made here
-          finger.thumb.angle_sum =
-            angle(L[1], L[2], L[3]) + angle(L[2], L[3], L[4]);
-          finger.index.angle_sum =
-            angle(L[5], L[6], L[7]) + angle(L[6], L[7], L[8]);
-          finger.middle.angle_sum =
-            angle(L[9], L[10], L[11]) + angle(L[10], L[11], L[12]);
-          finger.ring.angle_sum =
-            angle(L[13], L[14], L[15]) + angle(L[14], L[15], L[16]);
-          finger.pinky.angle_sum =
-            angle(L[17], L[18], L[19]) + angle(L[18], L[19], L[20]);
-          let index_middle_tip_dist = distance3d(
-            L[8].x,
-            L[8].y,
-            L[8].z,
-            L[12].x,
-            L[12].y,
-            L[12].z
-          );
+          // finger.thumb.angle_sum =
+          //   angle(L[1], L[2], L[3]) + angle(L[2], L[3], L[4]);
+          // finger.index.angle_sum =
+          //   angle(L[5], L[6], L[7]) + angle(L[6], L[7], L[8]);
+          // finger.middle.angle_sum =
+          //   angle(L[9], L[10], L[11]) + angle(L[10], L[11], L[12]);
+          // finger.ring.angle_sum =
+          //   angle(L[13], L[14], L[15]) + angle(L[14], L[15], L[16]);
+          // finger.pinky.angle_sum =
+          //   angle(L[17], L[18], L[19]) + angle(L[18], L[19], L[20]);
+          // let index_middle_tip_dist = distance3d(
+          //   L[8].x,
+          //   L[8].y,
+          //   L[8].z,
+          //   L[12].x,
+          //   L[12].y,
+          //   L[12].z
+          // );
 
-          let predicted_letter = letter(
-            finger.thumb.angle_sum,
-            finger.index.angle_sum,
-            finger.middle.angle_sum,
-            finger.ring.angle_sum,
-            finger.pinky.angle_sum,
-            index_middle_tip_dist
-          );
-          canvasCtx.font = "6px Arial";
-          canvasCtx.fillText(
-            Math.floor(finger.thumb.angle_sum),
-            landmarks[2].x * canvasElement.width,
-            landmarks[2].y * canvasElement.height
-          );
-          canvasCtx.fillText(
-            Math.floor(finger.index.angle_sum),
-            landmarks[5].x * canvasElement.width,
-            landmarks[5].y * canvasElement.height
-          );
-          canvasCtx.fillText(
-            Math.floor(finger.middle.angle_sum),
-            landmarks[9].x * canvasElement.width,
-            landmarks[9].y * canvasElement.height
-          );
-          canvasCtx.fillText(
-            Math.floor(finger.ring.angle_sum),
-            landmarks[13].x * canvasElement.width,
-            landmarks[13].y * canvasElement.height
-          );
-          canvasCtx.fillText(
-            Math.floor(finger.pinky.angle_sum),
-            landmarks[17].x * canvasElement.width,
-            landmarks[17].y * canvasElement.height
-          );
-          // canvasCtx.font = "30px Arial";
-          // canvasCtx.fillStyle = "red";
-          //canvasCtx.fillText(predicted_letter, 5, canvasElement.height / 2);
+          // let predicted_letter = letter(
+          //   finger.thumb.angle_sum,
+          //   finger.index.angle_sum,
+          //   finger.middle.angle_sum,
+          //   finger.ring.angle_sum,
+          //   finger.pinky.angle_sum,
+          //   index_middle_tip_dist
+          // );
+          // canvasCtx.font = "6px Arial";
+          // canvasCtx.fillText(
+          //   Math.floor(finger.thumb.angle_sum),
+          //   landmarks[2].x * canvasElement.width,
+          //   landmarks[2].y * canvasElement.height
+          // );
+          // canvasCtx.fillText(
+          //   Math.floor(finger.index.angle_sum),
+          //   landmarks[5].x * canvasElement.width,
+          //   landmarks[5].y * canvasElement.height
+          // );
+          // canvasCtx.fillText(
+          //   Math.floor(finger.middle.angle_sum),
+          //   landmarks[9].x * canvasElement.width,
+          //   landmarks[9].y * canvasElement.height
+          // );
+          // canvasCtx.fillText(
+          //   Math.floor(finger.ring.angle_sum),
+          //   landmarks[13].x * canvasElement.width,
+          //   landmarks[13].y * canvasElement.height
+          // );
+          // canvasCtx.fillText(
+          //   Math.floor(finger.pinky.angle_sum),
+          //   landmarks[17].x * canvasElement.width,
+          //   landmarks[17].y * canvasElement.height
+          // );
+          // // canvasCtx.font = "30px Arial";
+          // // canvasCtx.fillStyle = "red";
+          // canvasCtx.fillText(predicted_letter, 5, canvasElement.height / 2);
         }
       }
     }
-   // canvasCtx.restore();
+    canvasCtx.restore();
   }
 
   const hands = new Hands({

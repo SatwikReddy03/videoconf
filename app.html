@@ -192,12 +192,12 @@
   // });
   // hands.onResults(onResults);
 
-  // const doSomethingWithFrame = async (now, metadata) => {
-  //   await hands.send({ image: remote_video });
-  //   remote_video.requestVideoFrameCallback(doSomethingWithFrame);
-  // };
+   const doSomethingWithFrame = async (now, metadata) => {
+     await hands.send({ image: remote_video });
+     remote_video.requestVideoFrameCallback(doSomethingWithFrame);
+   };
 
-  // remote_video.requestVideoFrameCallback(doSomethingWithFrame);
+   remote_video.requestVideoFrameCallback(doSomethingWithFrame);
 
   // function distance3d(x1, y1, z1, x2, y2, z2) {
   //   return Math.sqrt(
